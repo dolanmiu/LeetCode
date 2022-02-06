@@ -6,7 +6,6 @@
 // Space: O(x)
 var findMinArrowShots = function(points) {
     const sortedPoints = [...points].sort((a, b) => a[1] - b[1]);
-    console.log(sortedPoints);
     
     let shots = sortedPoints.length;
     
@@ -21,7 +20,6 @@ var findMinArrowShots = function(points) {
                 break;
             }
         }
-        console.log(hits)
         shots -= hits;
         i += hits;
     }
