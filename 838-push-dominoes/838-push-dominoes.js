@@ -48,7 +48,6 @@ function stepTime(strState) {
         }
     }
     
-    console.log(newState.join(''))
     
     return newState.join('');
 }
