@@ -4,6 +4,7 @@
  * @return {string}
  */
 // Time: O(n * m)
+// Space: O(max_string)
 var findLongestWord = function(s, dictionary) {
     let maxCount = 0;
     let maxWord = "";
@@ -28,7 +29,6 @@ var findLongestWord = function(s, dictionary) {
             }
         }
         
-        console.log(currCount, curr.length)
         
         if (currCount === curr.length) {
             if (currCount > maxCount) {
