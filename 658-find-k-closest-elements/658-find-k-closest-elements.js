@@ -4,6 +4,8 @@
  * @param {number} x
  * @return {number[]}
  */
+// Time: O(2n)
+// Space: O(n)
 var findClosestElements = function(arr, k, x) {
     const diffArr = arr.map(n => Math.abs(n - x));
     
