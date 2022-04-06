@@ -14,18 +14,18 @@ var checkSubarraySum = function(nums, k) {
     for (let i = 0; i < nums.length; i++) {
         runningSum += nums[i];
         runningSum %= k;
-        
-        const prev = map.get(runningSum);
+        const currRunningSum = runningSum % k;
+        const possibleIndex = map.get(currRunningSum);
 
-        if (prev !== undefined) {
-                                console.log(i, prev, runningSum);
-
-            if (i - prev > 1) {
+        if (possibleIndex !== undefined) {
+            if (i - possibleIndex > 1) {
                 return true;
             }
         } else {
-            map.set(runningSum, i);
+            map.set(currRunningSum, i);
         }
+        
+        runningSum = currRunningSum;
     }
     
     return false;
