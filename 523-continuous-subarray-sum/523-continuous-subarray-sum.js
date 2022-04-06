@@ -16,6 +16,7 @@ var checkSubarraySum = function(nums, k) {
         const possibleIndex = map.get(currRunningSum);
 
         if (possibleIndex !== undefined) {
+            // This makes sure the subarray is of length 2 or more
             if (i - possibleIndex > 1) {
                 return true;
             }
