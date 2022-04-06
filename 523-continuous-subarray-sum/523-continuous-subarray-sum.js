@@ -12,9 +12,7 @@ var checkSubarraySum = function(nums, k) {
     let runningSum = 0;
     
     for (let i = 0; i < nums.length; i++) {
-        runningSum += nums[i];
-        runningSum %= k;
-        const currRunningSum = runningSum % k;
+        const currRunningSum = (runningSum + nums[i]) % k;
         const possibleIndex = map.get(currRunningSum);
 
         if (possibleIndex !== undefined) {
