@@ -18,6 +18,8 @@
     
 //     return words.join(" ");
 // };
+// Time: O(n)
+// Space: (n)
 var replaceWords = function(dictionary, sentence) {
     const trie = createTrie(dictionary);
     const dicSet = new Set(dictionary);
