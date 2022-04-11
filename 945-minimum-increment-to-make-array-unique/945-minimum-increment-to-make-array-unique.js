@@ -60,6 +60,7 @@ var minIncrementForUnique = function(nums) {
             taken--;
             moves += x;
         }
+        console.log(x, moves, taken)
     }
     
     return moves;
