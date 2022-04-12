@@ -9,6 +9,8 @@
  * @param {ListNode} head
  * @return {number}
  */
+// Time: O(2n)
+// Space: O(n)
 var pairSum = function(head) {
     const stack = [];
     
