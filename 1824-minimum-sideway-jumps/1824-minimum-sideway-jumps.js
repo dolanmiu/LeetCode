@@ -24,10 +24,8 @@ var minSideJumps = function(obstacles) {
             }
             
             state[i][j] = Math.min(
-                Math.min(
-                    state[i - 1][(j + 1) % 3] + 1, 
-                    state[i - 1][(j + 2) % 3] + 1
-                ), 
+                state[i - 1][(j + 1) % 3] + 1, 
+                state[i - 1][(j + 2) % 3] + 1,
                 state[i - 1][j]
             );
         }
@@ -35,7 +33,7 @@ var minSideJumps = function(obstacles) {
     
     const lastRow = state[state.length - 1];
     
-    return Math.min(Math.min(lastRow[0], lastRow[1]), lastRow[2]);
+    return Math.min(...lastRow);
 };
 
 function obstacleInWay(obstacles, i, j) {
