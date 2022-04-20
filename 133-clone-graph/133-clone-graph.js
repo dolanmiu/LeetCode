@@ -18,7 +18,6 @@ var cloneGraph = function(node) {
     }
     
     const dummy = new Node(-1, [node]);
-    const root = new Node(-1);
     
     const visited = new Set([]);
     const nodeMap = new Map();
@@ -29,7 +28,6 @@ var cloneGraph = function(node) {
     while (queue.length > 0) {
         const curr = queue.shift();
         nodeMap.set(curr.val, curr);
-
 
         for (const neighbour of curr.neighbors) {
             if (visited.has(neighbour)) {
@@ -42,25 +40,14 @@ var cloneGraph = function(node) {
             queue.push(neighbour);
             visited.add(neighbour);
         }
-        
     }
-        console.log(nodeMap, copyNodeMap)
-
+    
+    nodeMap.delete(-1);
     
     for (const [key, currNode] of nodeMap) {
-        if (key === -1) {
-            continue;
-        }
         const curr = copyNodeMap.get(key);
-        console.log(currNode)
-        
-        curr.neighbors = currNode.neighbors.map((neighbor) => {
-            return copyNodeMap.get(neighbor.val);
-        });
+        curr.neighbors = currNode.neighbors.map((neighbor) => copyNodeMap.get(neighbor.val));
     }    
-    
-    console.log(nodeMap, copyNodeMap)
-
     
     return copyNodeMap.get(1);
 };
