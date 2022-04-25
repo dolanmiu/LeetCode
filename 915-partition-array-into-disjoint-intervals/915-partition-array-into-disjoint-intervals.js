@@ -11,9 +11,8 @@ var partitionDisjoint = function(nums) {
         if (currMax > nums[i]) {
             currIndex = i;
             currMax = possibleMax;
-        } else {
-            possibleMax = Math.max(possibleMax, nums[i]);
         }
+        possibleMax = Math.max(possibleMax, nums[i]);
     }
     
     return currIndex + 1;
