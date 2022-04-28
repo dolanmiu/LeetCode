@@ -2,6 +2,8 @@
  * @param {number} n
  * @return {number}
  */
+// Time: O(n^2)
+// Space: O(n^2)
 let mem;
 var getMoneyAmount = function(n) {
     mem = new Map();
