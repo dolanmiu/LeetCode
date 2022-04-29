@@ -38,7 +38,7 @@ function dfs(currTotal) {
         return mem.get(key);
     }
     
-    
+    let output = false;
     
     for (let i = 1; i <= maxInteger; i++) {
         if (picked[i] === true) {
@@ -51,17 +51,17 @@ function dfs(currTotal) {
                 
         picked[i] = false;
         
-        if (!res) {
-            mem.set(key, true)
-            return true;
+        output = output || !res;
+        
+        if (output) {
+            // Short circuit to prevent TLE
+            break;
         }
-        
-        
     }
     
-    mem.set(key, false);
+    mem.set(key, output);
     
-    return false;
+    return output;
 }
 
 function format(arr) {
