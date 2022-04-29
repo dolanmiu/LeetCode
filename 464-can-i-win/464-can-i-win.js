@@ -3,6 +3,9 @@
  * @param {number} desiredTotal
  * @return {boolean}
  */
+// Time: O(2^n)
+// Space: O(M + 2^n) if creating new array
+// Space O(M) if reusing array
 let mem;
 let maxInteger;
 let picked;
@@ -35,6 +38,8 @@ function dfs(currTotal) {
         return mem.get(key);
     }
     
+    
+    
     for (let i = 1; i <= maxInteger; i++) {
         if (picked[i] === true) {
             continue;
@@ -56,7 +61,7 @@ function dfs(currTotal) {
     
     mem.set(key, false);
     
-    return mem.get(key);
+    return false;
 }
 
 function format(arr) {
