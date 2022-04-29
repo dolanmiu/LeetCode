@@ -47,10 +47,12 @@ function dfs(currTotal) {
         
         picked[i] = true;
         
+        // The recursion level going into this is the "other" player
         const res = dfs(currTotal - i);
                 
         picked[i] = false;
         
+        // This is why we negate, because if he loses, then we win
         output = output || !res;
         
         if (output) {
