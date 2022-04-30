@@ -6,8 +6,8 @@
  * @return {number}
  */
 // Create buckets instead, that might be better
-// Time: O(wlogw + hlogh + ...)
-// Space: O(hc + vc)
+// Time: O(vclogvc + hcloghc + vc + vc * hc)
+// Space: O(vc)
 const modValue = Math.pow(10, 9) + 7;
 // var maxArea = function(h, w, horizontalCuts, verticalCuts) {
 //     horizontalCuts = horizontalCuts.sort((a, b) => a - b);
