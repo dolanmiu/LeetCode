@@ -2,7 +2,8 @@
  * @param {number[]} matchsticks
  * @return {boolean}
  */
-// Time: O(n)
+// Time: O(2^n)
+// Space: O(n)
 let target;
 var makesquare = function(matchsticks) {
     const sum = matchsticks.reduce((acc, curr) => acc + curr);
@@ -38,6 +39,7 @@ function dfs(matchsticks, buckets, index) {
     
     outer:
     for (let i = 0; i < 4; i++) {
+        // Need to do this optimisation to not make it TLE
         inner:
         for (let j = 0; j < 4; j++) {
             if (j === i) {
