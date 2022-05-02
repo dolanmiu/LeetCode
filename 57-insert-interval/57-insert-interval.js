@@ -12,6 +12,8 @@ var insert = function(intervals, newInterval) {
         
         if (newEnd < currStart) {
             // If the current one passes the interval
+            // We then know where to place the interval
+            // We add the current output first, slot in the interval, and then tack on the rest of the uninterated intervals at the back
             return [...output, [newStart, newEnd], ...intervals.slice(i)];
         } else if (newStart > currEnd) {
             // If the interval is greater than the current one - further ahead
