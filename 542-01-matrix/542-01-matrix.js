@@ -3,6 +3,7 @@
  * @return {number[][]}
  */
 // Time: O(n*m)
+// Space: O(m * n)
 let mem;
 var updateMatrix = function(mat) {
     mem = Array(mat.length).fill(undefined).map((_, i) => Array(mat[i].length).fill(undefined));
