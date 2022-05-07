@@ -2,6 +2,8 @@
  * @param {number} target
  * @return {number}
  */
+// Time: O(n) // n states
+// Space: O(2n) // states can go up to double the target
 let mem;
 var racecar = function(target) {
     mem = new Set();
