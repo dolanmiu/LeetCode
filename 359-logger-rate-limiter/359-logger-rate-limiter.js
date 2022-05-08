@@ -8,6 +8,8 @@ var Logger = function() {
  * @param {string} message
  * @return {boolean}
  */
+// Time: O(1)
+// Space: O(n)
 Logger.prototype.shouldPrintMessage = function(timestamp, message) {
     if (this.debounce.has(message)) {
         if (timestamp >= this.debounce.get(message) + 10) {
