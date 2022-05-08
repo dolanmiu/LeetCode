@@ -5,6 +5,8 @@
  * @param {string[]} targets
  * @return {string}
  */
+// O(n)
+// O(n)
 let eligibleMem;
 var findReplaceString = function(s, indices, sources, targets) {
     eligibleMem = Array(s.length).fill(false);
