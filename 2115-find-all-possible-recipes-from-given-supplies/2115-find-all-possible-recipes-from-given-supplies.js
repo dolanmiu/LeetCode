@@ -4,6 +4,8 @@
  * @param {string[]} supplies
  * @return {string[]}
  */
+// Time: O(R * I)
+// Space: O(R + I + S)
 let suppliesSet;
 let blacklistSuppliesSet;
 let recipesSet;
