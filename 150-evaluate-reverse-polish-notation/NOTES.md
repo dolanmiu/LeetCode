@@ -1,7 +1,9 @@
 # Intuition
-Polish notation is simply something you got to learn
+Got to learn polish notation
 ​
-* Take the first and second numbers before the operator, and then do the operation and remove the numbers, and replace the operator with the value
-* Remember to offset the index -2
-* Round the number down, Math.floor
-* Done
+* Take the first and second numbers before an operator
+* Do the operation
+* Replace tokens[i] with the value
+* `splice` the numbers off
+* Make sure to `index - 2` to re-position the index after splice
+* `Math.floor`
