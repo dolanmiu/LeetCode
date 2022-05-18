@@ -2,13 +2,13 @@
  * @param {number[][]} paint
  * @return {number[]}
  */
+// Time: O(n^2)
+// Space: O(n)
 var amountPainted = function(paint) {
     let prevBits = 0n;
     const output = [];
     
-    for (let i = 0; i < paint.length; i++) {
-        const [start, end] = paint[i];
-        
+    for (const [start, end] of paint) {        
         const span = BigInt(end - start);
         const currBits = ((2n << span - 1n) - 1n) << BigInt(start);
         const mergedBits = currBits | prevBits;
@@ -22,7 +22,9 @@ var amountPainted = function(paint) {
     return output;
 };
 
-// TIme: O(n)
+// Time: O(n)
+// Stolen from Stack Overflow:
+// https://stackoverflow.com/questions/43122082/efficiently-count-the-number-of-bits-in-an-integer-in-javascript
 function count1s(n) {
     if (n === 0) {
         return 0;
