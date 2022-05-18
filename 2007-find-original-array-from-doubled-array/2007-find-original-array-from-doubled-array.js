@@ -16,7 +16,7 @@ var findOriginalArray = function(changed) {
             return [];
         }
     }
-    console.log(changed)
+    
     const output = new Map();
     const used = new Map();
     
@@ -30,7 +30,6 @@ var findOriginalArray = function(changed) {
         }
         
         const double = curr * 2;
-        console.log(double, count.get(double), used.get(double), count.get(double))
         
         if (count.has(double) && (used.get(double) ?? 0) < count.get(double)) {
             used.set(double, (used.get(double) ?? 0) + 1);
@@ -49,7 +48,6 @@ var findOriginalArray = function(changed) {
         }
     }
     
-    console.log(res, output)
     
     if (res.length !== changed.length / 2) {
         return [];
