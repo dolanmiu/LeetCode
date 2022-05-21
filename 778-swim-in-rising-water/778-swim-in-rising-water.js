@@ -2,6 +2,8 @@
  * @param {number[][]} grid
  * @return {number}
  */
+// Time: O(2*n*m)
+// Space: O(n*m)
 var swimInWater = function(grid) {
     const queue = [[0, 0]];
     const stuckMap = new Map();
