@@ -5,7 +5,7 @@ var StockPrice = function() {
     this.minQueue = new MinPriorityQueue();
     this.maxQueue = new MaxPriorityQueue();
 };
-
+// Time: O(logn)
 /** 
  * @param {number} timestamp 
  * @param {number} price
@@ -25,6 +25,7 @@ StockPrice.prototype.update = function(timestamp, price) {
     this.minQueue.enqueue(obj, obj.value);
 };
 
+// O(1)
 /**
  * @return {number}
  */
@@ -32,6 +33,7 @@ StockPrice.prototype.current = function() {
     return this.timeMap.get(this.latestTimestamp);
 };
 
+// Time: O(nlog n) Worst case
 /**
  * @return {number}
  */
@@ -47,6 +49,7 @@ StockPrice.prototype.maximum = function() {
     }
 };
 
+// Time: O(nlog n) Worst case
 /**
  * @return {number}
  */
