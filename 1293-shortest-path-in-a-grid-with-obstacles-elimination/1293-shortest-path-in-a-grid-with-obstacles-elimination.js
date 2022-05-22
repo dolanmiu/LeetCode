@@ -3,6 +3,8 @@
  * @param {number} k
  * @return {number}
  */
+// Time: O(m*n*k);
+// Space: O(m*n*k)
 var shortestPath = function(grid, k) {
     
     const queue = [{ i: 0, j: 0, powersUsed: 0, level: 0 }];
