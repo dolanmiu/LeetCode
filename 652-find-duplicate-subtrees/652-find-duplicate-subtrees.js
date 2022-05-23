@@ -10,11 +10,13 @@
  * @param {TreeNode} root
  * @return {TreeNode[]}
  */
-let map;
+// Time: O(n^2) - string concat
+// Space: O(n)
+let snapshots;
 let res;
 var findDuplicateSubtrees = function(root) {
     res = [];
-    map = new Map();
+    snapshots = new Map();
     
     postOrder(root, res);
     
@@ -31,9 +33,9 @@ function postOrder(curr) {
     
     const serialised = `${curr.val}-${left}-${right}`;
     
-    map.set(serialised, (map.get(serialised) ?? 0) + 1);
+    snapshots.set(serialised, (snapshots.get(serialised) ?? 0) + 1);
  
-    if (map.get(serialised) === 2) {
+    if (snapshots.get(serialised) === 2) {
         res.push(curr);
     }
     
