@@ -10,7 +10,6 @@ var minimumEffortPath = function(heights) {
     
     while (!minQueue.isEmpty()) {
         const nearestNeighbours = minQueue.dequeue();
-        console.log('priority', nearestNeighbours.priority)
         for (const neighbour of nearestNeighbours.element) {
             queue.push(neighbour);
             visited.add(`${neighbour.i}-${neighbour.j}`);
@@ -21,12 +20,10 @@ var minimumEffortPath = function(heights) {
             const curr = queue.shift();
 
             if (curr.i === heights.length - 1 && curr.j === heights[0].length - 1) {
-                console.log(curr)
                 return curr.effort;
             }
 
             const neighbours = getNeighbours(heights, curr, visited);
-            console.log(curr, neighbours)
 
             const effortMap = neighbours.reduce((acc, curr) => {
                 return acc.set(curr.effort, [...(acc.get(curr.effort) ?? []), curr]);
