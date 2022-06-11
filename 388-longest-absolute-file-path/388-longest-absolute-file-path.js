@@ -2,6 +2,8 @@
  * @param {string} input
  * @return {number}
  */
+// Time: O(3n)
+// Space: O(n)
 var lengthLongestPath = function(input) {
     const nests = (input.match(new RegExp("\n", "g")) || []).length;
     const currPaths = Array(nests);
