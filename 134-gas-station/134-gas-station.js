@@ -3,6 +3,8 @@
  * @param {number[]} cost
  * @return {number}
  */
+// Time: O(n)
+// Space: O(n)
 var canCompleteCircuit = function(gas, cost) {
     const gasSum = gas.reduce((acc, curr) => acc + curr);
     const costSum = cost.reduce((acc, curr) => acc + curr);
@@ -16,9 +18,7 @@ var canCompleteCircuit = function(gas, cost) {
     const diff = gas.map((g, i) => {
         return g - cost[i]; 
     });
-    
-    console.log(diff);
-    
+        
     let total = 0;
     let candidate = 0;
     
@@ -38,15 +38,4 @@ var canCompleteCircuit = function(gas, cost) {
     }
     
     return candidate;
-    
-};
-
-function getValue(arr, index) {
-    const newIndex = index.mod(arr.length);
-
-    return arr[newIndex];
-}
-
-Number.prototype.mod = function (n) {
-  return ((this % n) + n) % n;
 };
