@@ -4,6 +4,8 @@
  * @param {string[]} bank
  * @return {number}
  */
+// Time: O(bank)
+// Space: O(bank)
 let visited;
 let bankSet;
 var minMutation = function(start, end, bank) {
