@@ -4,7 +4,7 @@
  * @param {string[]} bank
  * @return {number}
  */
-// Time: O(bank)
+// Time: O(bank * 8)
 // Space: O(bank)
 let visited;
 let bankSet;
