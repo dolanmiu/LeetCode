@@ -10,6 +10,10 @@ var minSubarray = function(nums, p) {
     const totalSum = nums.reduce((a, b) => a + b);
     const target = mod(totalSum, p);
     
+    if (p > totalSum) {
+        return -1;
+    }
+    
     if (target === 0) {
         return 0;
     }
@@ -35,7 +39,12 @@ var minSubarray = function(nums, p) {
     };
     
     
-    
+    // This is important, can't check if its 10**12
+    // For test cases: 
+    // https://leetcode.com/submissions/detail/820391882/
+    // https://leetcode.com/submissions/detail/820395357/
+    //
+    // This is because needed value may find 0 at the very end, which is -1
     if (min >= nums.length) {
         return -1;
     }
