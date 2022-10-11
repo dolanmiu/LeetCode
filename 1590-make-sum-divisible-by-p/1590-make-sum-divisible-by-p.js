@@ -36,6 +36,7 @@ var minSubarray = function(nums, p) {
         }
         
         prev.set(currSum, i);
+        // console.log(prev)
     };
     
     
