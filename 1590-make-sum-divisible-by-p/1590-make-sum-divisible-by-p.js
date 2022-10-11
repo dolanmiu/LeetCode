@@ -3,6 +3,8 @@
  * @param {number} p
  * @return {number}
  */
+// Time: O(n)
+// Space: O(n)
 var minSubarray = function(nums, p) {
     const prev = new Map([[0, -1]]);
     const totalSum = nums.reduce((a, b) => a + b);
@@ -22,12 +24,11 @@ var minSubarray = function(nums, p) {
         currSum += nums[i];
         currSum = mod(currSum, p);
         
-        const curr = nums[i];
-
         const neededValue = mod(currSum - target, p);
         
-        if (prev.has(mod(currSum - target, p))) {
-            min = Math.min(min, i - prev.get(mod(currSum - target, p)));
+        if (prev.has(neededValue)) {
+            console.log(i, prev.get(neededValue), neededValue)
+            min = Math.min(min, i - prev.get(neededValue));
         }
         
         prev.set(currSum, i);
